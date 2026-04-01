@@ -38,7 +38,7 @@ const jobsData = [
     type: "Hybrid",
   },
   {
-    id: 4,
+    id: 6,
     title: "Data Scientist",
     company: "TCS",
     location: "Mumbai",

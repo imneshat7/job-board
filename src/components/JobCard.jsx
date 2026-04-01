@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom"
 function JobCard({ title, company, location, type }) {
+
+  const navigate = useNavigate();
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm flex flex-col justify-between min-h-[400px]">
+    <div className="bg-white border border-gray-200 rounded-xl
+      p-4 shadow-sm flex flex-col justify-between min-h-[400px]">
       <div>
         <h2 className="text-xl font-semibold">{title}</h2>
         <p className="text-gray-600">{company}</p>
@@ -9,7 +13,9 @@ function JobCard({ title, company, location, type }) {
           {type}
         </span>
       </div>
-      <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">
+      <button
+      onClick={() => navigate('/job/${id}')}
+      className="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">
         View Job
       </button>
     </div>
