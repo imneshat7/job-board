@@ -1,16 +1,28 @@
-# React + Vite
+# ExecutiveHire - Job Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A job portal web app built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
+- Browse job listings in a 3 column grid
+- Real time search by title, company, and location
+- Filter jobs by type — Full Time, Part Time, Contract, Hybrid
+- Click any job to view its detail page
+- Responsive header with integrated search and filter
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- React 18
+- Vite
+- Tailwind CSS v3
+- React Router DOM
 
-## React Compiler
+## What I learned building this
+- Component composition and props
+- useState and useEffect
+- Lifting state up
+- Controlled inputs
+- Array filtering logic
+- React Router — dynamic routes, useParams, useNavigate
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How to run locally
+npm install
+npm run dev
