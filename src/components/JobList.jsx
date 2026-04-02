@@ -1,13 +1,26 @@
 import { useState, useEffect } from "react";
 import JobCard from "./JobCard"; 
-import jobsData from "../data/jobs";
+import {supabase} from "../supabaseClient"
+
 
 
 function JobList({ searchTerm , filterType }) {
   const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setJobs(jobsData);
+    const fetchJobs = async () => {
+      const { data , error} = await supabase.from("jobs").select("*");
+      if (error) {
+        console.error("Error fetching jobs:", error);
+        
+      } else {
+        setJobs(data);
+      }
+      setLoading(false);
+    };
+    fetchJobs();
+    
   }, []);
 
   const filteredJobs = jobs.filter((job) => {
@@ -20,6 +33,8 @@ function JobList({ searchTerm , filterType }) {
 
   return matchesSearch && matchesFilter
 })
+
+if(loading) return <div className="p-6 text-center">Loading...</div>
 
   return (
     <div className="p-6   grid grid-cols-3  gap-4">
