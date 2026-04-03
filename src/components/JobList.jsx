@@ -38,16 +38,21 @@ if(loading) return <div className="p-6 text-center">Loading...</div>
 
   return (
     <div className="p-6   grid grid-cols-3  gap-4">
-      {filteredJobs.map((job) => (
-        <JobCard
-          key={job.id}
-          id={job.id}
-          title={job.title}
-          company={job.company}
-          location={job.location}
-          type={job.type}
-        />
-      ))}
+      {filteredJobs.length === 0 ? (
+        <div className="col-span-3 text-center bg-gray-100">No jobs found.</div>
+      ) : (
+        filteredJobs.map((job) => (
+          <JobCard
+            key={job.id}
+            id={job.id}
+            title={job.title}
+            company={job.company}
+            location={job.location}
+            type={job.type}
+          />
+        ))
+      )}
+
     </div>
   );
 }
